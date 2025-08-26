@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>GenZ Name Roast</h1>
+<p class="muted">Enter your name — we’ll keep it cute, not cruel.</p>
+<form action="/" method="post" class="card">
+  <label for="name">Your name</label>
+  <input id="name" name="name" placeholder="Sayan" maxlength="40" required />
+  <button type="submit">Cook me 🔥</button>
+</form>
+
+{% if roast %}
+<div class="card roast">
+  <div class="big">{{ roast.roast }} {{ roast.emoji }}</div>
+  <div class="muted">target: {{ roast.name }}</div>
+  <a class="btn" href="/">Run it back ↩</a>
+</div>
+{% endif %}
+{% endblock %}
